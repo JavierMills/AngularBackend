@@ -1,0 +1,42 @@
+<%- include("template/cabecera", {TitulodeCabecera:' Hola desde include portafolio'}) %>
+
+<body>
+  <%- include("template/navbar")%>   
+
+  <div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre:</th>
+          <th scope="col">Description:</th>
+          <th scope="col">Category</th>
+          <th scope="col">Lengs</th>
+          <th scope="col">Year</th>
+          <th scope="col">Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (arrayPortafolio.length > 0) { %>
+      
+          <% arrayPortafolio.forEach(item => { %>
+            <tr>
+              <th scope="row"><%= item.id %> </th>
+              <td><%= item.name %> </td>
+              <td><%= item.description %> </td>
+              <td><%= item.category %> </td>
+              <td><%= item.lengs %> </td>
+              <td><%= item.year %> </td>
+              <td><%= item.image %> </td>
+              
+            </tr>
+          <% }) %>
+       <% } %>
+       
+      </tbody>
+    </table>    
+  </div>
+   
+ <%- include("template/footer")%>
+
+ 

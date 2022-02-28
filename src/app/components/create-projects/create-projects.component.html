@@ -1,0 +1,67 @@
+<div class="container" *ngIf="project">
+    <h2>{{title}}</h2>
+
+    <div class="messaje success" *ngIf="status == 'failed'" >
+        El proyecto no se ha podido crear
+    </div>
+
+    <div class="messaje failed" *ngIf="status == 'success'" >
+        El proyecto se ha creado correctamente puedes<a [routerLink]="['/proyecto',save_project._id]">verlo aqui!!!</a>
+    </div>
+
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+        <p>
+            <label for="name">Nombre</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required>
+            <span *ngIf="name.touched && !name.valid">
+                No lleno el campo nombre o es invalido, vuelva a intentar...
+            </span>
+        </p>
+
+        <p>
+            <label for="description">Descripción</label>
+            <textarea name="description" #description="ngModel" [(ngModel)]="project.description" required></textarea>
+            <span *ngIf="description.touched && !description.valid">
+                No lleno el campo descripcion o es invalido, vuelva a intentar...
+            </span>
+        </p>
+
+        <p>
+            <label for="category">Categoría</label>
+            <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" required>
+            <span *ngIf="category.touched && !category.valid">
+                No lleno el campo categoría o es invalido, vuelva a intentar...
+            </span>
+        </p>
+
+        <p>
+            <label for="year">Año de Lanzamiento</label>
+            <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year" required>
+            <span *ngIf="year.touched && !year.valid">
+                No lleno el campo year o es invalido, vuelva a intentar...
+            </span>
+        </p>
+
+        <p>
+            <label for="lengs">Lenguajes Utilizados</label>
+            <input type="text" name="lengs" #lengs="ngModel" [(ngModel)]="project.lengs" required>
+            <span *ngIf="lengs.touched && !lengs.valid">
+                No lleno el campo lenguajes o es invalido, vuelva a intentar...
+            </span>
+        </p>
+        <p>
+            <label for="img">Imagen del proyecto</label>
+            <!-- el evento change cuando hacemos algu cambio en algun input va a lanzar otro metodo que tengamos en nuestro componete -->
+            <span class="imagen" *ngIf="project.image" style="float: none;">
+                <img src="{{url+'getimagen/' +project.image}}" style="width: 100px;">
+            </span>
+            <br>
+            <input type="file" name="img" placeholder="Subir imagen" (change)="fileChangeEvent($event)">
+        </p>
+        <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid">
+
+        
+
+    </form>
+
+</div>

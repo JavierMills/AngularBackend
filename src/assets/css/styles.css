@@ -1,0 +1,292 @@
+/* carga url de la fuete inprtamor fuente coustom*/
+@font-face{
+    font-family: "yanone";
+    src: url("../css/fonts/yanone.ttf");
+}
+
+@font-face{
+    font-family: "finger";
+    src: url("../css/fonts/finger.ttf");
+}
+
+/* Generales */
+*{
+    margin: 0px;
+    padding: 0px;
+    
+}
+body{
+    font-family: "yanone", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    /* background: linear-gradient(68.15deg, #16124e 16.62%, #52000e 85.61%); */
+
+    background: linear-gradient(68.15deg, #feffba 16.62%, #feffba 85.61%);
+    background-attachment: fixed;
+}
+
+clearfix{
+    float: none;
+    clear: both;
+}
+
+/* barra de navegacion */
+header{
+    display: flex;
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    text-transform: uppercase ;
+}
+
+header ul{
+    display: block;
+    width: 40%;
+    /* inherit esta heredado del padre */
+    height: 10px;
+    margin: 0px auto;
+    margin-top: -5px;
+}
+
+header ul li{
+    /* los elemntos se ponen al lado del otro con in line block */
+    display: inline-block;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 88px;
+}
+
+header a{
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: inherit;
+    text-decoration: none;
+    color: black;
+    transition: all 300ms;
+}
+
+#logo{
+    object-fit: contain;
+    font-family: "finger";
+    font-size: 30px;
+}
+
+#logo a{
+    transition: color 500ms, transform 500ms;
+    color: black
+}
+
+#logo a:hover{
+    background: transparent;
+    color: black;
+    transform: scale(1.35, 1.35);
+}
+
+/* contenedor principal */
+
+#content{
+    /* tamaño minimo de 700px  */
+    min-height: 1500px;
+
+    width: 75%;
+    border-left: 1px solid #b7b7b7;
+    border-right: 1px solid #b7b7b7;
+    /* magin 0px auto para que se centre el elemento */
+    margin: 0px auto;
+    box-shadow: 0px 0px 40px black;
+    background: rgba(243, 247, 246, 0.137);
+    padding-top: 120px;
+    
+}
+/* pie de pagina */
+footer{
+    width: 75%;
+    margin:0px auto;
+    padding-top: 15px;
+    color: rgba(0, 0, 0, 0.5);
+}
+/* maquetar sobre mi */
+#title{
+    width: 70%;
+    margin: 0px auto;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+ #title h1{
+     font-family: "finger";
+     font-size: 60px;
+     border-bottom: 1px solid rgb(0, 0, 0);
+     padding-bottom: 5px;
+ }
+
+ #title h2{
+     font-size: 30px;
+     color: rgb(255, 238, 0);
+     margin-top: 15px;
+     margin-bottom: 15px;
+ }
+
+ article.about{
+     width: 70%;
+     margin: 0px auto;
+     margin-bottom: 20px;
+     font-size: 23px;
+ }
+ .about h2{
+     border-bottom: 2px solid rgb(0, 0, 0);
+     padding-bottom: 5px;
+     margin-bottom: 10px;
+     text-align: justify;
+ }
+ .about p{
+     padding-top: 25px;
+     padding-bottom: 30px;
+ }
+ /* seccion con formulario */
+ .container{
+     padding: 30px;
+     padding-top: 10px;
+ }
+ .container h2{
+
+     border-bottom: 1px solid rgb(0, 0, 0);
+     padding-bottom: 15px;
+     margin-bottom: 30px;
+ }
+
+.imagen{
+    width: 1100px;
+    height: 500px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+form{
+    width: 80%;
+}
+form label{
+    display: block;
+    width: 100%;
+    padding-top: 15px;
+    margin-bottom: 5px;
+
+}
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form textarea{
+    width: 50%;
+    padding: 5px;
+    border-radius: 99px;
+}
+form button,
+form input[type="submit"]{
+    display: block;
+    font-size: 15px;
+    padding: 15px;
+    margin-top: 20px;
+    color: rgba(0, 0, 0, 1);
+    background: rgb(252, 143, 0); 
+    cursor: pointer;
+}
+p .editar,
+p .borrar{
+    display: block;
+    font-size: 20px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+    cursor: pointer;
+    width: 20%;
+    float: right;
+    margin-right: 90px;
+    text-decoration: none;
+}
+p .editar{
+    background: rgb(255, 187, 0);
+    border: 2px solid black;
+}
+p .borrar{
+    background: red;
+    border: 2px solid black;
+}
+form button:hover,
+form input[type="submit"]:hover{
+    color: rgba(0, 0, 0, 1);
+    background: rgba(252, 230, 0, 0.8); 
+    cursor: pointer;
+}
+span{
+    padding: 3px;
+    color:red;
+    font-size: 18px;
+}
+form input[disabled]{
+    opacity:  0.3;
+    cursor: not-allowed; 
+}
+.failed{
+    width: 50%;
+    padding: 5px;
+    border: 1px solid green; 
+    background: green;
+    color: white;
+}
+.success{
+    width: 50%;
+    padding: 5px;
+    border: 1px solid red;
+    background: red;
+    color: white;
+    margin-top: 2px;
+}
+.success a{
+    color: blue;
+}
+/* paguina de proyectos */
+.project{
+    /* para que nos quite los puntitos de la lista */
+    list-style: none;
+    display: block;
+    float: left;
+    width: 25%;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+
+}
+.project .image{
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.project img{
+    width: 200px;
+
+}
+.project:hover{
+    transform: scale(1.08)
+}
+
+.project a{
+    text-decoration: none;
+    color:black;
+}
+
+.def{
+    display: block;
+    color: black;
+    font-size: 30px;
+    margin-top: 15px;
+    
+}
+.alinear{
+    color: black;
+}
